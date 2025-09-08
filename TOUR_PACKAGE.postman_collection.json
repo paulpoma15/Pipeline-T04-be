@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "b7d5b2c4-11f8-4dbb-a16c-89d2a9f7d111",
+		"name": "TOUR_PACKAGE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FOLDER",
+			"item": [
+				{
+					"name": "CREATE | CREAR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"packageName\": \"Aventura Andina\",\r\n  \"description\": \"Paquete de trekking por la cordillera de los Andes.\",\r\n  \"price\": 1200.00,\r\n  \"durationDays\": 7,\r\n  \"startDate\": \"2025-07-01\",\r\n  \"endDate\": \"2025-07-07\",\r\n  \"state\": \"A\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiurl}}/v1/api/tour-packages/save",
+							"host": ["{{apiurl}}"],
+							"path": ["v1", "api", "tour-packages", "save"]
+						}
+					}
+				},
+				{
+					"name": "READ | LISTAR TODOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiurl}}/v1/api/tour-packages",
+							"host": ["{{apiurl}}"],
+							"path": ["v1", "api", "tour-packages"]
+						}
+					}
+				},
+				{
+					"name": "READ | LISTAR X ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiurl}}/v1/api/tour-packages/1",
+							"host": ["{{apiurl}}"],
+							"path": ["v1", "api", "tour-packages", "1"]
+						}
+					}
+				},
+				{
+					"name": "READ | LISTAR X ESTADO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiurl}}/v1/api/tour-packages/state/A",
+							"host": ["{{apiurl}}"],
+							"path": ["v1", "api", "tour-packages", "state", "A"]
+						}
+					}
+				},
+				{
+					"name": "UPDATE | EDITAR",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"packageName\": \"Aventura Andina Actualizada\",\r\n  \"description\": \"Nueva descripción actualizada.\",\r\n  \"price\": 1350.50,\r\n  \"durationDays\": 8,\r\n  \"startDate\": \"2025-07-02\",\r\n  \"endDate\": \"2025-07-09\",\r\n  \"state\": \"A\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiurl}}/v1/api/tour-packages/update/1",
+							"host": ["{{apiurl}}"],
+							"path": ["v1", "api", "tour-packages", "update", "1"]
+						}
+					}
+				},
+				{
+					"name": "DELETE | ELIMINAR",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{apiurl}}/v1/api/tour-packages/delete/1",
+							"host": ["{{apiurl}}"],
+							"path": ["v1", "api", "tour-packages", "delete", "1"]
+						}
+					}
+				},
+				{
+					"name": "RESTORE | RESTAURAR",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{apiurl}}/v1/api/tour-packages/restore/1",
+							"host": ["{{apiurl}}"],
+							"path": ["v1", "api", "tour-packages", "restore", "1"]
+						}
+					}
+				}
+			]
+		}
+	]
+}
