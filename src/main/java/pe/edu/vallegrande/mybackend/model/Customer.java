@@ -1,36 +1,36 @@
 package pe.edu.vallegrande.mybackend.model;
 
 import lombok.Data;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Column;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Data                      // ✅ genera los getters y setters
-@Table(name = "customer")  // ✅ nombre de la tabla en la base de datos
+@Data
+@Table(name = "customer") // nombre exacto de la tabla en SQL Server
 public class Customer {
 
     @Id
-    @Column(name = "id")          // 🗄️ nombre del campo en la base de datos
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // ✅ para que el id se genere automaticamente
-    private Long id;              // ☕️ nombre del atributo en la clase java
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
 
-    @Column(name = "dni")         // 🗄️ nombre del campo en la base de datos
-    private String dni;           // ☕️ nombre del atributo en la clase java
+    @Column(name = "first_name", nullable = false)
+    private String firstName;
 
-    @Column(name = "cellphone")   // 🗄️ nombre del campo en la base de datos
-    private String cellPhone;     // ☕️ nombre del atributo en la clase java
+    @Column(name = "last_name", nullable = false)
+    private String lastName;
 
-    @Column(name = "first_name")  // 🗄️ nombre del campo en la base de datos
-    private String firstName;     // ☕️ nombre del atributo en la clase java
+    @Column(name = "document_type", nullable = false)
+    private String documentType;
 
-    @Column(name = "last_name")   // 🗄️ nombre del campo en la base de datos
-    private String lastName;      // ☕️ nombre del atributo en la clase java
+    @Column(name = "nro_document", nullable = false, unique = true)
+    private String nroDocument;
 
-    @Column(name = "state")       // 🗄️ nombre del campo en la base de datos
-    private String state;         // ☕️ nombre del atributo en la clase java
+    @Column(name = "phone")
+    private String phone;
 
+    @Column(name = "email", unique = true)
+    private String email;
+
+    @Column(length = 1, nullable = false)
+    private String estado;
 }

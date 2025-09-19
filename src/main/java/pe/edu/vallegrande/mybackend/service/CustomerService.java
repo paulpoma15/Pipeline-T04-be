@@ -6,25 +6,17 @@ import java.util.Optional;
 
 public interface CustomerService {
 
-    // ⚙️🔍 Definir método Listar Todos
     List<Customer> findAll();
 
-    // ⚙️🔍 Definir método Listar por Estado
-    List<Customer> findByState(String state);
+    Optional<Customer> findById(Integer id);
 
-    // ⚙️🔍 Definir método Listar por ID
-    Optional<Customer> findById(Long id);
+    List<Customer> findByEstado(String estado);
 
-    // ⚙️✅ Definir método Registrar
     Customer save(Customer customer);
 
-    // ⚙️✏️ Definir método Actualizar
     Customer update(Customer customer);
 
-    // ⚙️❌ Definir método Eliminar (Cambio de Estado) por ID
-    Customer delete(Long id);
+    void delete(Integer id);
 
-    // ⚙️♻️ Definir método Restaurar (Cambio de Estado) por ID
-    Customer restore(Long id);
-    
+    void restore(Integer id);
 }
