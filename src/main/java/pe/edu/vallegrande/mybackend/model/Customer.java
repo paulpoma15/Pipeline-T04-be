@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Data
-@Table(name = "customer") // nombre exacto de la tabla en SQL Server
+@Table(name = "customer") // nombre exacto .de la tabla en SQL Server
 public class Customer {
 
     @Id
