@@ -1,14 +1,15 @@
 package pe.edu.vallegrande.mybackend.repository;
 
 import pe.edu.vallegrande.mybackend.model.Customer;
-import org.springframework.data.jpa.repository.JpaRepository;
-import java.util.List;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
-public interface CustomerRepository extends JpaRepository<Customer, Integer> {
+public interface CustomerRepository extends ReactiveMongoRepository<Customer, String> {
 
     // Buscar por número de documento
-    Customer findByNroDocument(String nroDocument);
+    Mono<Customer> findByNroDocument(String nroDocument);
 
-    // Buscar por estado
-    List<Customer> findByEstado(String estado);
+    // Buscar por estado (true = activo, false = inactivo)
+    Flux<Customer> findByEstado(boolean estado);
 }

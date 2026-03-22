@@ -4,13 +4,12 @@ import pe.edu.vallegrande.mybackend.model.Customer;
 import pe.edu.vallegrande.mybackend.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/v1/api/customer")   // http://localhost:8086/v1/api/customer
+@RequestMapping("/v1/api/customer")
 public class CustomerRest {
 
     private final CustomerService customerService;
@@ -20,45 +19,46 @@ public class CustomerRest {
         this.customerService = customerService;
     }
 
-    // Listar todos
+    // LISTAR TODOS
     @GetMapping
-    public List<Customer> findAll() {
+    public Flux<Customer> findAll() {
         return customerService.findAll();
     }
 
-    // Buscar por ID
+    // BUSCAR POR ID
     @GetMapping("/{id}")
-    public Optional<Customer> findById(@PathVariable Integer id) {
+    public Mono<Customer> findById(@PathVariable String id) {
         return customerService.findById(id);
     }
 
-    // Buscar por estado
+    // BUSCAR POR ESTADO
     @GetMapping("/state/{estado}")
-    public List<Customer> findByEstado(@PathVariable String estado) {
+    public Flux<Customer> findByEstado(@PathVariable boolean estado) {
         return customerService.findByEstado(estado);
     }
 
-    // Crear
-    @PostMapping("/save")
-    public Customer save(@RequestBody Customer customer) {
+    // CREAR
+    @PostMapping
+    public Mono<Customer> save(@RequestBody Customer customer) {
         return customerService.save(customer);
     }
 
-    // Actualizar
-    @PutMapping("/update")
-    public Customer update(@RequestBody Customer customer) {
-        return customerService.update(customer);
+    // ACTUALIZAR
+    @PutMapping("/{id}")
+    public Mono<Customer> update(@PathVariable String id,
+                                 @RequestBody Customer customer) {
+        return customerService.update(id, customer);
     }
 
-    // Eliminar (cambia estado a "I")
+    // ELIMINAR LOGICO
     @PatchMapping("/delete/{id}")
-    public void delete(@PathVariable Integer id) {
-        customerService.delete(id);
+    public Mono<Customer> delete(@PathVariable String id) {
+        return customerService.delete(id);
     }
 
-    // Restaurar (cambia estado a "A")
+    // RESTAURAR
     @PatchMapping("/restore/{id}")
-    public void restore(@PathVariable Integer id) {
-        customerService.restore(id);
+    public Mono<Customer> restore(@PathVariable String id) {
+        return customerService.restore(id);
     }
 }

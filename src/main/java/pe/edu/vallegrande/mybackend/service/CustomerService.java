@@ -1,22 +1,29 @@
 package pe.edu.vallegrande.mybackend.service;
 
 import pe.edu.vallegrande.mybackend.model.Customer;
-import java.util.List;
-import java.util.Optional;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 public interface CustomerService {
 
-    List<Customer> findAll();
+    // LISTAR TODOS
+    Flux<Customer> findAll();
 
-    Optional<Customer> findById(Integer id);
+    // BUSCAR POR ID
+    Mono<Customer> findById(String id);
 
-    List<Customer> findByEstado(String estado);
+    // BUSCAR POR ESTADO
+    Flux<Customer> findByEstado(boolean estado);
 
-    Customer save(Customer customer);
+    // CREAR
+    Mono<Customer> save(Customer customer);
 
-    Customer update(Customer customer);
+    // ACTUALIZAR
+    Mono<Customer> update(String id, Customer customer);
 
-    void delete(Integer id);
+    // ELIMINAR LOGICO
+    Mono<Customer> delete(String id);
 
-    void restore(Integer id);
+    // RESTAURAR
+    Mono<Customer> restore(String id);
 }

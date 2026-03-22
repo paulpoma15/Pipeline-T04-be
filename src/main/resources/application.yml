@@ -2,16 +2,9 @@ server:
   port: 8086
 
 spring:
-  datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=model;encrypt=true;trustServerCertificate=true
-    username: sa
-    password: Admin12345
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-  jpa:
-    database-platform: org.hibernate.dialect.SQLServerDialect
-    hibernate:
-      ddl-auto: validate  # Puede ser 'create', 'update', 'validate' o 'none'
-    show-sql: true        # true/false para ver las consultas SQL en consola
-  jackson:
-    serialization:
-      indent-output: true   # ✅ Activa el JSON bonito
+  application:
+    name: spring-webflux-nosql
+  data:
+    mongodb:
+      database: AngomaTours
+      uri:  mongodb+srv://lucianaruizcahuas_db_user:BJ5WwNXuP29fWZgr@cluster0.lbifc5e.mongodb.net/AngomaTours?retryWrites=true&w=majority
