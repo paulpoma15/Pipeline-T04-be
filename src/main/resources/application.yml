@@ -6,5 +6,4 @@ spring:
     name: spring-webflux-nosql
   data:
     mongodb:
-      database: AngomaTours
-      uri:  mongodb+srv://lucianaruizcahuas_db_user:BJ5WwNXuP29fWZgr@cluster0.lbifc5e.mongodb.net/AngomaTours?retryWrites=true&w=majority
+      uri:  mongodb+srv://ciropoma_db:yZ2uIezkd2qR4KOX@cluster0.dhuboqy.mongodb.net/AngomaTours?retryWrites=true&w=majority
