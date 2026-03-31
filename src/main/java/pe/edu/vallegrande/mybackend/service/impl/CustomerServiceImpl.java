@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDateTime;
+
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
@@ -39,31 +41,46 @@ public class CustomerServiceImpl implements CustomerService {
     // CREAR
     @Override
     public Mono<Customer> save(Customer customer) {
-        customer.setEstado(true); // activo por defecto
+
+        customer.setEstado(true);
+        customer.setFechaIngreso(LocalDateTime.now());
+        customer.setFechaActualizacion(null);
+        customer.setFechaEliminacion(null);
+        customer.setFechaRestauracion(null);
+
         return customerRepository.save(customer);
     }
 
     // ACTUALIZAR
     @Override
     public Mono<Customer> update(String id, Customer customer) {
+
         return customerRepository.findById(id)
                 .flatMap(c -> {
+
                     c.setFirstName(customer.getFirstName());
                     c.setLastName(customer.getLastName());
                     c.setDocumentType(customer.getDocumentType());
                     c.setNroDocument(customer.getNroDocument());
                     c.setPhone(customer.getPhone());
                     c.setEmail(customer.getEmail());
+
+                    c.setFechaActualizacion(LocalDateTime.now());
+
                     return customerRepository.save(c);
                 });
     }
 
-    // ELIMINAR LOGICO
+    // ELIMINACION LOGICA
     @Override
     public Mono<Customer> delete(String id) {
+
         return customerRepository.findById(id)
                 .flatMap(c -> {
+
                     c.setEstado(false);
+                    c.setFechaEliminacion(LocalDateTime.now());
+
                     return customerRepository.save(c);
                 });
     }
@@ -71,9 +88,14 @@ public class CustomerServiceImpl implements CustomerService {
     // RESTAURAR
     @Override
     public Mono<Customer> restore(String id) {
+
         return customerRepository.findById(id)
                 .flatMap(c -> {
+
                     c.setEstado(true);
+                    c.setFechaRestauracion(LocalDateTime.now());
+                    c.setFechaEliminacion(null);
+
                     return customerRepository.save(c);
                 });
     }

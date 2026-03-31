@@ -19,44 +19,46 @@ public class CustomerRest {
         this.customerService = customerService;
     }
 
-    // LISTAR TODOS
+    // LISTAR TODOS LOS CLIENTES
     @GetMapping
     public Flux<Customer> findAll() {
         return customerService.findAll();
     }
 
-    // BUSCAR POR ID
+    // BUSCAR CLIENTE POR ID
     @GetMapping("/{id}")
     public Mono<Customer> findById(@PathVariable String id) {
         return customerService.findById(id);
     }
 
-    // BUSCAR POR ESTADO
+    // LISTAR CLIENTES POR ESTADO
+    // true = activos
+    // false = eliminados
     @GetMapping("/state/{estado}")
     public Flux<Customer> findByEstado(@PathVariable boolean estado) {
         return customerService.findByEstado(estado);
     }
 
-    // CREAR
+    // CREAR CLIENTE
     @PostMapping
     public Mono<Customer> save(@RequestBody Customer customer) {
         return customerService.save(customer);
     }
 
-    // ACTUALIZAR
+    // ACTUALIZAR CLIENTE
     @PutMapping("/{id}")
     public Mono<Customer> update(@PathVariable String id,
                                  @RequestBody Customer customer) {
         return customerService.update(id, customer);
     }
 
-    // ELIMINAR LOGICO
+    // ELIMINACIÓN LÓGICA
     @PatchMapping("/delete/{id}")
     public Mono<Customer> delete(@PathVariable String id) {
         return customerService.delete(id);
     }
 
-    // RESTAURAR
+    // RESTAURAR CLIENTE ELIMINADO
     @PatchMapping("/restore/{id}")
     public Mono<Customer> restore(@PathVariable String id) {
         return customerService.restore(id);

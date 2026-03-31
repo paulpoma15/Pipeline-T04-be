@@ -12,4 +12,8 @@ public interface CustomerRepository extends ReactiveMongoRepository<Customer, St
 
     // Buscar por estado (true = activo, false = inactivo)
     Flux<Customer> findByEstado(boolean estado);
+
+    // Buscar cliente por documento y estado
+    Mono<Customer> findByNroDocumentAndEstado(String nroDocument, boolean estado);
+
 }

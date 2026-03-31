@@ -6,24 +6,26 @@ import reactor.core.publisher.Mono;
 
 public interface CustomerService {
 
-    // LISTAR TODOS
+    // LISTAR TODOS LOS CLIENTES
     Flux<Customer> findAll();
 
-    // BUSCAR POR ID
+    // BUSCAR CLIENTE POR ID
     Mono<Customer> findById(String id);
 
-    // BUSCAR POR ESTADO
+    // LISTAR CLIENTES POR ESTADO
+    // true = activos
+    // false = eliminados
     Flux<Customer> findByEstado(boolean estado);
 
-    // CREAR
+    // CREAR CLIENTE
     Mono<Customer> save(Customer customer);
 
-    // ACTUALIZAR
+    // ACTUALIZAR CLIENTE
     Mono<Customer> update(String id, Customer customer);
 
-    // ELIMINAR LOGICO
+    // ELIMINACIÓN LÓGICA
     Mono<Customer> delete(String id);
 
-    // RESTAURAR
+    // RESTAURAR CLIENTE
     Mono<Customer> restore(String id);
 }
