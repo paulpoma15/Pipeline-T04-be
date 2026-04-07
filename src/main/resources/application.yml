@@ -1,0 +1,10 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: spring-webflux-nosql
+  data:
+    mongodb:
+      database: AngomaTours
+      uri:  mongodb+srv://lucianaruizcahuas_db_user:BJ5WwNXuP29fWZgr@cluster0.lbifc5e.mongodb.net/AngomaTours?retryWrites=true&w=majority

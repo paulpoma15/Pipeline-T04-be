@@ -1,0 +1,22 @@
+{
+  "packageName": "Tour Cusco Mágico 4D/3N",
+  "description": "Recorrido por Cusco, Valle Sagrado y Machu Picchu con guía profesional y hotel",
+  "price": 980.00,
+  "startDate": "2026-05-15",
+  "endDate": "2026-05-18",
+  "ubigeoCode": "080101",
+  "driverId": 3,
+  "state": "A"
+}
+
+
+{
+  "packageName": "Tour Cusco Premium 5D/4N",
+  "description": "Se agregó Montaña de 7 Colores, tren panorámico y hotel 4 estrellas",
+  "price": 1350.00,
+  "startDate": "2026-05-15",
+  "endDate": "2026-05-19",
+  "ubigeoCode": "080101",
+  "driverId": 4,
+  "state": "A"
+}
