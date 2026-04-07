@@ -1,0 +1,6 @@
+# kubectl create namespace paul-poma-11-namespace (COMMAND)
+# kubectl apply -f paul-poma-11-namespace.yml (yml)
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: paul-poma-11-namespace
