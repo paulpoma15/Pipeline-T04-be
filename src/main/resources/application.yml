@@ -1,0 +1,20 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: spring-webflux-nosql
+  data:
+    mongodb:
+      database: AngomaTours
+      uri: mongodb+srv://lucianaruizcahuas_db_user:BJ5WwNXuP29fWZgr@cluster0.lbifc5e.mongodb.net/?appName=Cluster0
+      # database: AngomaTours
+      # uri:  mongodb+srv://ciropoma_db:yZ2uIezkd2qR4KOX@cluster0.dhuboqy.mongodb.net/?retryWrites=true&w=majority
+      
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html1
