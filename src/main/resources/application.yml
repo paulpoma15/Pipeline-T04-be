@@ -11,6 +11,7 @@ spring:
       # database: AngomaTours
       # uri:  mongodb+srv://ciropoma_db:yZ2uIezkd2qR4KOX@cluster0.dhuboqy.mongodb.net/?retryWrites=true&w=majority
       
+
 springdoc:
   api-docs:
     enabled: true
