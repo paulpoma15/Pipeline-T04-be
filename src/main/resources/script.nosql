@@ -20,3 +20,175 @@
   "driverId": 4,
   "state": "A"
 }
+
+
+CREATE 
+
+{
+  "packageName": "Tour Cajamarca Naturaleza y Cultura 4D/3N",
+  "description": "Incluye Cumbemayo, Ventanillas de Otuzco, Baños del Inca y hotel 4 estrellas",
+  "price": 890.00,
+  "startDate": "2026-07-08",
+  "endDate": "2026-07-11",
+  "ubigeoCode": "060101",
+  "driverId": 6,
+  "state": "A"
+}
+
+
+
+EDIT
+
+
+{
+  "packageName": "Tour Cajamarca Experiencia Completa 4D/3N",
+  "description": "Ahora incluye Cumbemayo, Ventanillas de Otuzco, Baños del Inca, city tour y hotel 4 estrellas",
+  "price": 990.00,
+  "startDate": "2026-07-08",
+  "endDate": "2026-07-11",
+  "ubigeoCode": "060101",
+  "driverId": 6,
+  "state": "A"
+}
+
+
+
+{
+  "packageName": "Aventura en la Selva Tarapoto 5D/4N",
+  "description": "Incluye Laguna Azul, Catarata de Ahuashiyacu, Lamas y hotel ecológico 3 estrellas con desayunos",
+  "price": 1250.00,
+  "startDate": "2026-08-15",
+  "endDate": "2026-08-19",
+  "ubigeoCode": "220901",
+  "driverId": 8,
+  "state": "A"
+}
+
+
+{
+  "packageId": 12,
+  "packageName": "Aventura en la Selva Tarapoto Premium 5D/4N",
+  "description": "Incluye Laguna Azul, Catarata de Ahuashiyacu, Lamas, tour nocturno en la selva y hotel ecológico 4 estrellas con desayunos y cenas",
+  "price": 1490.00,
+  "startDate": "2026-08-20",
+  "endDate": "2026-08-24",
+  "ubigeoCode": "220901",
+  "driverId": 8,
+  "state": "A"
+}
+
+// CREAR CUSTOMER BOOKING PAYMENT 
+
+{
+  "firstName": "Paul",
+  "lastName": "Poma",
+  "documentType": "DNI",
+  "nroDocument": "74859632",
+  "phone": "987654321",
+  "email": "paul.poma@mail.com",
+  "estado": true
+}
+
+
+{
+  "customerId": "69e8630aad8eb35a1592c7e8",
+  "tourPackageId": "69cab12c32f1e86bf54b611a",
+  "bookingDate": "2026-04-22T06:05:00.000Z",
+  "bookingType": "ONLINE",
+  "totalAmount": 2700,
+  "status": "CONFIRMED",
+  "isPaid": false,
+  "active": true,
+  "details": [
+    {
+      "quantity": 2,
+      "unitPrice": 1350,
+      "subTotal": 2700,
+      "serviceExtra": "Hotel 4 estrellas + Tren panorámico"
+    }
+  ]
+}
+
+{
+  "bookingId": "69e8630aad8eb35a1592c7e8",
+  "paymentMethod": "CARD",
+  "status": "P",
+  "details": [
+    {
+      "description": "Tour Cusco Premium 5D/4N",
+      "quantity": 2,
+      "unitPrice": 1350,
+      "subTotal": 0
+    }
+  ]
+}
+
+// NUEVO...
+
+{
+  "firstName": "Lucia",
+  "lastName": "Mendoza",
+  "documentType": "DNI",
+  "nroDocument": "71548963",
+  "phone": "912345678",
+  "email": "lucia.mendoza@mail.com",
+  "estado": true
+}
+
+{
+  "customerId": "AQUI_TU_ID_CUSTOMER",
+  "tourPackageId": "AQUI_TU_ID_TOURPACKAGE",
+  "bookingDate": "2026-05-10T10:30:00.000Z",
+  "bookingType": "ONLINE",
+  "totalAmount": 1800,
+  "status": "CONFIRMED",
+  "isPaid": false,
+  "active": true,
+  "details": [
+    {
+      "quantity": 3,
+      "unitPrice": 600,
+      "subTotal": 1800,
+      "serviceExtra": "Guía privado + Almuerzo buffet"
+    }
+  ]
+}
+
+{
+  "bookingId": "AQUI_TU_ID_BOOKING",
+  "paymentMethod": "TRANSFER",
+  "status": "P",
+  "details": [
+    {
+      "description": "Tour Arequipa Full Day",
+      "quantity": 3,
+      "unitPrice": 600,
+      "subTotal": 0
+    }
+  ]
+}
+
+OTRO 
+
+
+{
+  "packageName": "Ruta Mágica Cusco y Valle Sagrado 5D/4N",
+  "description": "Incluye City Tour Cusco, Valle Sagrado, Machu Picchu, Maras Moray y hotel 4 estrellas",
+  "price": 1450.00,
+  "startDate": "2026-08-15",
+  "endDate": "2026-08-19",
+  "ubigeoCode": "080101",
+  "driverId": 4,
+  "state": "A"
+}
+
+{
+  "packageName": "Ruta Mágica Cusco Premium 5D/4N",
+  "description": "Incluye City Tour Cusco, Valle Sagrado, Machu Picchu, Maras Moray, tren turístico y hotel 4 estrellas superior",
+  "price": 1650.00,
+  "startDate": "2026-08-15",
+  "endDate": "2026-08-19",
+  "ubigeoCode": "080101",
+  "driverId": 4,
+  "state": "A"
+}
