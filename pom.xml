@@ -9,7 +9,7 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.0.0</version>
+    <version>3.0.0</version>
     <relativePath/>
 </parent>
 
@@ -20,7 +20,7 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
 <description>Proyecto Spring WebFlux con MongoDB</description>
 
 <properties>
-    <java.version>17</java.version>
+    <java.version>8</java.version>
 </properties>
 
 <dependencies>
