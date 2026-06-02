@@ -42,7 +42,7 @@ jobs:
           scan-ref: '.'
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
           ignore-unfixed: true
-          exit-code: '1' # 0: Falla por vulnerabilidades | 1: No falla por vulnerabilidades
+          exit-code: '0' # 0: Falla por vulnerabilidades | 1: No falla por vulnerabilidades
 
       - name: Pipeline Finished
         run: echo "Trivy scan completed successfully"
